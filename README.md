@@ -2,19 +2,32 @@
 Final project for the Building AI section in AI Fundamentals 2 at Linköping University (LiU).
 
 ## Summary
-Small Rivers is a conversational AI coach that helps users rethink media-related spending habits. It operates on the idea that "small streams make an ocean" and demonstrates how small frequent financial decisions can create large differences over time. The system supports the user in shifting from short-term consumption towards long-term financial goals through reflective dialogue and motivational behavioral patterns.
+Small Rivers is a conversational AI coach that helps users understand the hidden opportunity cost of modern media consumption habits. It is based on the idea that “small streams make an ocean”. The small recurring costs (subscriptions or movie tickets turning into streams) accumulate over time, creating an ocean of missed opportunities and dreams. 
+
+Instead of restricting behavior, Small Rivers uses reflective dialogue and personalized comparisons to help users align short-term habits with meaningful long-term goals. Over time, users develop a more intentional approach to spending that aligns with their personal values and long-term goals.
 
 ## Background
-Many people underestimate how small, recurring expenses adversely affect their goals. 
--   **The Consumption Paradox:** According to Pew Research Center (2025), 77% of low-income adults in the US maintain streaming subscriptions (e.g. Netflix, $8.99-$26.99/month). Although individually small, these costs compound significantly in the long run. This reflects how digital convenience is often prioritized even under financial constraints.
--   **The Debt vs. Pleasure Gap:** Gen Z averages $34,328 in debt (Experian, 2025), while cinema attendance in this group grew by 25% over the last year (Cinema United, 2025). This suggests a disconnect between spending on short-term impulses and financial stability.
--  **Behavioral framing challenge:** Many users do not perceive small recurring costs as meaningful financial decisions. Small Rivers aims to increase awareness of this "just a few dollars" mindset and support more intentional decision-making aligned with personal future goals. 
-Importantly, the system is not designed to restrict spending, but to improve awareness and self-alignment.
+In the United States, many people underestimate how small recurring expenses affect their long-term financial goals. These costs are often perceived as insignificant in isolation but can accumulate into substantial amounts over time. 
+- **The Consumption Paradox:** According to Pew Research Center (2025), 77% of low-income adults in the US maintain streaming subscriptions (e.g. Netflix, $8.99-$26.99/month). Despite financial constraints, digital convenience remains a priority, highlighting how small recurring costs are normalized.
+- **The Debt vs. Pleasure Gap:** Gen Z carries an average of $34,328 in debt (Experian, 2025), while cinema attendance in this group grew by 25% over the past year (Cinema United, 2025). This suggests a disconnect between spending on short-term impulses and financial stability.
+- **Behavioral framing challenge:** Many users do not perceive small recurring costs as meaningful financial decisions. Small Rivers disrupts this "just a few dollars" mindset by visualizing the long-term impact of these choices. The goal isn't to stop spending, but to ensure that every dollar spent is a conscious choice that aligns with the user's future.
 
 ## How is it used?
-Small Rivers is a multi-turn conversational AI agent. Users report their media-related expenses or intended purchases, and the system responds with reflections, projections, and comparisons. The interaction is continuous rather than static, encouraging users to revisit and reflect on their decisions.
+Small Rivers is a multi-turn conversational AI agent. Users report their media-related expenses or intended purchases, and the system responds with reflections, projections, and comparisons. For example, a user might mention a subscription, and the system can show its long-term cost or compare it to potential investment growth.
 
-The system is restricted to non-essential media spending (e.g. streaming services, cinema visits, digital purchases) to avoid interference with essential financial decisions such as food, housing, or healthcare. 
+The interaction is continuous, allowing users to revisit decisions, adjust habits, and reflect on how their spending evolves.
+
+The system is restricted to non-essential media spending (e.g. streaming services, cinema visits, digital purchases) to avoid interfering with essential financial decisions such as food, housing, or healthcare.
+
+**Example Interaction:**
+1. A user reports having both a Netflix ($19.99/month) and Disney+ ($18.99/month) subscription.
+2. The system first acknowledges the value of the user’s choice to avoid judgment. It may ask follow-up questions to understand the user's reasoning.
+    - Example: *“Having access to a wide range of shows and movies can be a great way to relax and unwind. Are there any shows you’re currently following that are only available on one platform?”*
+3. The system then presents a “what if” comparison to make the long-term impact visible:
+    a. Path 1 – Current Habit: Keeping both subscriptions would cost approximately $2,339 over 5 years.
+    b. Path 2 – Opportunity: If the same $38.98/month were invested with a historical average return of ~10% (based on the S&P 500), it could grow to approximately $2,918.50 over 5 years, and in 20 years, it would be $27,053.19 despite only putting in ~$9,400 of your own money (Source: compound interest calculator – investor.gov).
+    c. Path 3 – Middle Ground: If the user prefers not to give up both services, the system explores alternatives. For example:
+        Example: *“What if you alternated between Netflix and Disney+ each year, while investing the difference? Over 20 years, this approach could accumulate to roughly $13,000, depending on contribution consistency and market performance assumptions.”*
 
 ### Core features
   - **Predictive Modeling (Linear Regression):** The agent uses reported habits and projects where the user will be in 5 years if the habit continues, while giving an alternative scenario where the same amount is invested. This is used to visualize long-term opportunity cost using historical market return assumptions (e.g. S&P 500 averages)
