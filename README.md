@@ -24,10 +24,10 @@ The system is restricted to non-essential media spending (e.g. streaming service
 2. The system first acknowledges the value of the user’s choice to avoid judgment. It may ask follow-up questions to understand the user's reasoning.
     - Example: *“Having access to a wide range of shows and movies can be a great way to relax and unwind. Are there any shows you’re currently following that are only available on one platform?”*
 3. The system then presents a “what if” comparison to make the long-term impact visible:
-    a. Path 1 – Current Habit: Keeping both subscriptions would cost approximately $2,339 over 5 years.
-    b. Path 2 – Opportunity: If the same $38.98/month were invested with a historical average return of ~10% (based on the S&P 500), it could grow to approximately $2,918.50 over 5 years, and in 20 years, it would be $27,053.19 despite only putting in ~$9,400 of your own money (Source: compound interest calculator – investor.gov).
-    c. Path 3 – Middle Ground: If the user prefers not to give up both services, the system explores alternatives. For example:
-        Example: *“What if you alternated between Netflix and Disney+ each year, while investing the difference? Over 20 years, this approach could accumulate to roughly $13,000, depending on contribution consistency and market performance assumptions.”*
+    - Path 1 – Current Habit: Keeping both subscriptions would cost approximately $2,339 over 5 years.
+    - Path 2 – Opportunity: If the same $38.98/month were invested with a historical average return of ~10% (based on the S&P 500), it could grow to approximately $2,918.50 over 5 years, and in 20 years, it would be $27,053.19 despite only putting in ~$9,400 of your own money (Source: compound interest calculator – investor.gov).
+    - Path 3 – Middle Ground: If the user prefers not to give up both services, the system explores alternatives. For example:
+        - Example: *“What if you alternated between Netflix and Disney+ each year, while investing the difference? Over 20 years, this approach could accumulate to roughly $13,000, depending on contribution consistency and market performance assumptions.”*
 
 ### Core features
   - **Predictive Modeling (Linear Regression):** The agent uses reported habits and projects where the user will be in 5 years if the habit continues, while giving an alternative scenario where the same amount is invested. This is used to visualize long-term opportunity cost using historical market return assumptions (e.g. S&P 500 averages)
