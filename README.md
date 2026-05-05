@@ -13,11 +13,11 @@ In the United States, many people underestimate how small recurring expenses aff
 - **Behavioral framing challenge:** Many users do not perceive small recurring costs as meaningful financial decisions. Small Rivers disrupts this "just a few dollars" mindset by visualizing the long-term impact of these choices. The goal isn't to stop spending, but to ensure that every dollar spent is a conscious choice that aligns with the user's future.
 
 ## How is it used?
-Small Rivers is a multi-turn conversational AI agent. Users report their media-related expenses or intended purchases, and the system responds with reflections, projections, and comparisons. For example, a user might mention a subscription, and the system can show its long-term cost or compare it to potential investment growth.
+Small Rivers is a multi-turn conversational AI agent. Users report their media-related expenses or intended purchases, and the system responds with reflections, projections, and comparisons. The interaction is continuous, allowing users to revisit decisions, adjust habits, and reflect on how their spending evolves. 
 
-The interaction is continuous, allowing users to revisit decisions, adjust habits, and reflect on how their spending evolves.
+The goal is not control, but self-directed behavioral change through reflection and projection. Rather than restricting behavior, Small Rivers focuses on increasing awareness and supporting internal motivation. The system reframes financial decisions as long-term trade-offs and helps users align daily actions with their own stated goals.
 
-The system is restricted to non-essential media spending (e.g. streaming services, cinema visits, digital purchases) to avoid interfering with essential financial decisions such as food, housing, or healthcare.
+The system is restricted to non-essential media spending (e.g. streaming services, cinema visits, digital purchases) to avoid interfering with essential financial decisions such as food, housing, or healthcare, due to its sensitive nature.
 
 **Example Interaction:**
 1. A user reports having both a Netflix ($19.99/month) and Disney+ ($18.99/month) subscription.
@@ -26,8 +26,26 @@ The system is restricted to non-essential media spending (e.g. streaming service
 3. The system then presents a “what if” comparison to make the long-term impact visible:
     - **Path 1** – *Current Habit*: Keeping both subscriptions would cost approximately $2,339 over 5 years.
     - **Path 2** – *Opportunity*: If the same $38.98/month were invested with a historical average return of ~10% (based on the S&P 500), it could grow to approximately $2,918.50 over 5 years, and in 20 years, it would be $27,053.19 despite only putting in ~$9,400 of your own money (Source: compound interest calculator – investor.gov).
-    - **Path 3** – *Middle Ground*: If the user prefers not to give up both services, the system explores alternatives. For example:
+    - **Path 3** – *Middle Ground*: If the user prefers not to give up both services, the system explores alternatives.
         - Example: *“What if you alternated between Netflix and Disney+ each year, while investing the difference? Over 20 years, this approach could accumulate to roughly $13,000, depending on contribution consistency and market performance assumptions.”*
+
+### Data and AI techniques
+Small Rivers combines conversational AI with lightweight financial modeling to provide a reflective coaching experience. It depends primarily on user-provided data, while also utilizing a lightweight Retrieval-Augmented Generation (RAG) component to access structured reference data such as subscription pricing ranges and historical market return assumptions (e.g. S&P 500 averages). This ensures that financial projections are grounded in realistic external values rather than static prompts alone.
+
+The system uses a large language model to generate natural language responses. Prompt engineering is applied to maintain a consistent coaching style, including reflective questioning, non-judgmental feedback, and scenario-based comparisons. User input is categorized into simple intent types (e.g. expense reporting, goal setting, uncertainty), allowing the system to adapt its conversational strategy across multiple turns.
+
+The language model interprets user input and extracts relevant financial information, which is then passed to a Python (NumPy-based) module for calculating long-term cost and investment projections.
+
+The computed results are returned to the language model, which translates numerical outputs into clear, reflective, and scenario-based explanations tailored to the user’s context.
+
+A lightweight SQLite or JSON database provides persistent memory, enabling the system to store user-reported expenses, goals, and previous interactions. This supports continuity across sessions and allows for more personalized, multi-turn dialogue over time.
+
+Technical stack:
+    - Python 
+        - NumPy: financial calculations and projections
+        - Pandas: handling user input data and structured records
+        - Matplotlib: visualization of long-term growth vs. spending scenarios
+    - SQLite or JSON database: to store of user sessions and goals
 
 ### Core features
   - **Predictive Modeling (Linear Regression):** The agent uses reported habits and projects where the user will be in 5 years if the habit continues, while giving an alternative scenario where the same amount is invested. This is used to visualize long-term opportunity cost using historical market return assumptions (e.g. S&P 500 averages)
@@ -37,15 +55,6 @@ The system is restricted to non-essential media spending (e.g. streaming service
     
     Example of conversation: *"I know you've been thinking about seeing the new Star Wars movie at the cinema, but imagine walking by Luke Skywalker and Yoda as we make it into the Black Spire Marketplace at Disney World. Hearing the noise of the ships' engines in the background and alien chatter in the stalls. I'm getting a Jedi robe when we get there, and I am not taking it off until we get home! What are you planning to buy?"*
 
-### Audience
-- Users interested in improving financial awareness and decision-making
-- Individuals with subscription-heavy or impulse-driven spending habits
-- Learners exploring behavioral change in their spending habits
-
-### Approach
-  * Rather than restricting behavior, Small Rivers focuses on increasing awareness and supporting internal motivation. The system reframes financial decisions as long-term trade-offs and helps users align daily actions with their own stated goals.
-
-The goal is not control, but self-directed behavioral change through reflection and projection.
 
 ## Challenges
 ### System Limitations
