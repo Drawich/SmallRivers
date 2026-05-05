@@ -40,12 +40,12 @@ The computed results are returned to the language model, which translates numeri
 
 A lightweight SQLite or JSON database provides persistent memory, enabling the system to store user-reported expenses, goals, and previous interactions. This supports continuity across sessions and allows for more personalized, multi-turn dialogue over time.
 
-Technical stack:
-- Python 
-    - NumPy: financial calculations and projections
-    - Pandas: handling user input data and structured records
-    - Matplotlib: visualization of long-term growth vs. spending scenarios
-- SQLite or JSON database: to store of user sessions and goals
+**Technical stack**:
+    - Python 
+        - NumPy: financial calculations and projections
+        - Pandas: handling user input data and structured records
+        - Matplotlib: visualization of long-term growth vs. spending scenarios
+    - SQLite or JSON database: to store of user sessions and goals
 
 ### Core features
   - **Predictive Modeling (Linear Regression):** The agent uses reported habits and projects where the user will be in 5 years if the habit continues, while giving an alternative scenario where the same amount is invested. This is used to visualize long-term opportunity cost using historical market return assumptions (e.g. S&P 500 averages)
